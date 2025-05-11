@@ -1,0 +1,407 @@
+    .split-pane-divider{
+        opacity: 0;
+    }
+    
+    #header {
+        -fx-background-color: "black";
+    }
+
+    #schedule {
+        -fx-font-size: 25px;
+        -fx-font-family: "Courier New";
+        -fx-background-color: black;
+        -fx-text-fill: white;
+        -fx-font-weight:700;
+    }
+
+    #schedule .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: black;
+    }
+
+
+    #schedule .list-view {
+        -fx-background-color: white;
+    }
+
+    #schedule .arrow {
+        -fx-background-color: white;
+    }
+    /*-------------------------------SHORCUTS----------------------------------------------------------------*/
+
+    #shortcut {
+        -fx-font-size: 18px;
+        -fx-font-family: "Courier New";
+        -fx-background-color: black;
+        -fx-text-fill: white;
+    }
+
+    #shortcut .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: black;
+    }
+
+
+    #shortcut .list-view {
+        -fx-background-color: white;
+    }
+
+
+    #shortcut .arrow {
+        -fx-background-color: white;
+    }
+
+
+    #loc {
+        -fx-font-size: 22px;
+        -fx-font-family: "Courier New";
+        -fx-background-color: transparent;
+        -fx-text-fill: white;
+        -fx-font-weight:700;
+        -fx-border-color: white;
+        -fx-border-radius: 10px;
+        
+    }
+        
+    #loc:hover {
+    -fx-border-color: #d6a2e8;
+        
+    }
+
+    #loc .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: transparent;
+    }
+
+
+    #loc .list-view {
+        -fx-background-color: black;
+    }
+
+
+    #loc .arrow {
+        -fx-background-color: white;
+    }
+    #mov1 {
+    -fx-font-size: 22px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+     -fx-border-radius: 10px;
+}
+
+#mov1 .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+}
+
+
+    #mov1 .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: transparent;
+    }
+
+
+    #mov1 .list-view {
+    -fx-background-color: black;
+    -fx-border-color: white;
+    -fx-border-width: 1px; 
+    -fx-border-radius: 4px; 
+}
+
+
+
+    #mov1 .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#mov1 .arrow {
+    -fx-background-color: white;
+}
+      #time {
+    -fx-font-size: 22px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+}
+
+
+#time .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+}
+
+
+    #time .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: transparent;
+    }
+
+
+   #time .list-view {
+    -fx-background-color: black;
+    -fx-border-color: white;
+    -fx-border-width: 1px; /* or 2px if you want it thicker */
+    -fx-border-radius: 4px; /* optional: rounded corners */
+}
+
+
+#time .arrow-button {
+   -fx-background-color: transparent;
+   -fx-border-color: transparent;
+}
+
+
+#time .arrow {
+    -fx-background-color: white;
+}    
+#cinema {
+    -fx-font-size: 22px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+}
+
+#cinema .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+}
+
+    #cinema .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: transparent;
+    }
+
+     #cinema .list-view {
+    -fx-background-color: black;
+    -fx-border-color: white;
+    -fx-border-width: 1px; 
+    -fx-border-radius: 4px; 
+}
+
+
+#cinema .arrow-button {
+   -fx-background-color: transparent;
+   -fx-border-color: transparent;
+}
+
+#cinema .arrow {
+    -fx-background-color: white;
+}
+    #seatno{
+        -fx-font-size: 25px;
+        -fx-font-family: "Courier New";
+        -fx-background-color: transparent;
+        -fx-text-fill: white;
+        -fx-font-weight:700;
+        -fx-border-color: white;
+         -fx-border-radius: 10px;
+    }
+
+    #seatno .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: white;
+    }
+
+
+    #seatno .list-view {
+        -fx-background-color: white;
+    }
+
+
+    #seatno .arrow {
+        -fx-background-color: white;
+    }
+    
+    #mov {
+    -fx-font-size: 22px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+    -fx-border-radius: 10px;
+}
+
+#mov:hover {
+    -fx-border-color: #d6a2e8;
+}
+
+#mov .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+#mov .list-view {
+    -fx-background-color: black;
+}
+
+#mov .arrow {
+    -fx-background-color: white;
+}
+
+
+#shorttime {
+    -fx-font-size: 25px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+}
+
+#shorttime .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+}
+
+#shorttime .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+#shorttime .list-view {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px; 
+    -fx-border-radius: 4px; 
+}
+
+#shorttime .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#shorttime .arrow {
+    -fx-background-color: white;
+}
+
+
+#shortmov {
+    -fx-font-size: 25px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+}
+
+#shortmov .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+}
+
+#shortmov .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+#shortmov .list-view {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px; 
+    -fx-border-radius: 4px; 
+}
+
+#shortmov .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#shortmov .arrow {
+    -fx-background-color: white;
+}
+
+
+#shortcinema {
+    -fx-font-size: 25px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+}
+
+#shortcinema .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+}
+
+#shortcinema .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+#shortcinema .list-view {
+    -fx-background-color: white;
+    -fx-border-color: black;
+    -fx-border-width: 1px; 
+    -fx-border-radius: 4px; 
+}
+
+#shortcinema .arrow-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+#shortcinema .arrow {
+    -fx-background-color: white;
+}
+
+
+#date {
+    -fx-font-size: 25px;
+    -fx-font-family: "Courier New";
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: white;
+}
+
+#date .text-field {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-weight: 700;
+    -fx-border-color: transparent;
+}
+
+    #date .list-cell {
+        -fx-text-fill: white;
+        -fx-background-color: transparent;
+    }
+
+     #date .list-view {
+    -fx-background-color: black;
+    -fx-border-color: white;
+    -fx-border-width: 1px; 
+    -fx-border-radius: 4px; 
+}
+
+
+#date .arrow-button {
+   -fx-background-color: transparent;
+   -fx-border-color: transparent;
+}
+
+#date .arrow {
+    -fx-background-color: white;
+}

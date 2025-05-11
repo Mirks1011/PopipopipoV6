@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Rectangle2D?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="absolutecinema.MainController"> 
+   <children>
+      <ScrollPane fitToWidth="true" prefHeight="800.0" prefWidth="1280.0" stylesheets="@application.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="70.0">
+         <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1518.0" prefWidth="1278.0" style="-fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);">
+               <children>
+                  <HBox alignment="CENTER" layoutX="326.0" prefHeight="100.0" prefWidth="623.0" AnchorPane.leftAnchor="326.0" AnchorPane.rightAnchor="329.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Label fx:id="showing" contentDisplay="CENTER" stylesheets="@../../../../absolutecinema/src/absolutecinema/application.css" text="NOW SHOWING" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="75.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                <AnchorPane layoutX="991.0" layoutY="89.0" prefHeight="602.0" prefWidth="257.0" style="-fx-background-color: black; -fx-background-radius: 15px;" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="89.0">
+                    <children>
+                        <Label layoutX="16.0" layoutY="4.0" prefHeight="59.0" prefWidth="240.0" text="BOOK NOW" textAlignment="CENTER" textFill="WHITE">
+                            <font>
+                                <Font name="Courier New" size="46.0" />
+                            </font>
+                        </Label>
+                        
+                                                                  <ComboBox fx:id="loc" layoutX="15.0" layoutY="148.0" prefHeight="37.0" prefWidth="231.0" promptText="Cinema" stylesheets="@application.css" />
+                        <ComboBox fx:id="mov" layoutX="18.0" layoutY="80.0" prefHeight="37.0" prefWidth="231.0" promptText="Movie" stylesheets="@application.css" />
+                        <ComboBox fx:id="time" layoutX="15.0" layoutY="301.0" prefHeight="37.0" prefWidth="231.0" promptText="Time" stylesheets="@application.css" />
+                        <Button fx:id="seatno" layoutX="15.0" layoutY="429.0" onAction="#showPopup" prefHeight="37.0" prefWidth="231.0" stylesheets="@application.css" text="Seat" />
+                        
+                                                                  <Button fx:id="prodpay" layoutX="14.0" layoutY="526.0" mnemonicParsing="false" onAction="#handleProceedToPayment" prefHeight="59.0" prefWidth="240.0" style="-fx-background-color: #b88821;" text="PROCEED TO PAYMENT" textAlignment="CENTER" textFill="WHITE">
+      
+                                          
+                                        <font>
+                                <Font name="Courier New" size="17.0" />
+                            </font>
+                        </Button>
+                        <ComboBox fx:id="schedule" layoutX="13.0" layoutY="223.0" prefHeight="37.0" prefWidth="231.0" promptText="Date" style="-fx-border-color: white; -fx-border-radius: 5;" stylesheets="@application.css" />
+                    </children>
+                </AnchorPane>
+                    
+                                    <HBox alignment="CENTER" layoutX="317.0" layoutY="675.0" prefHeight="100.0" prefWidth="623.0" AnchorPane.leftAnchor="317.0" AnchorPane.rightAnchor="326.0" AnchorPane.topAnchor="675.0">
+                     <children>
+                        <Label fx:id="showing1" contentDisplay="CENTER" stylesheets="@../../../../absolutecinema/src/absolutecinema/application.css" text="COMING SOON" textFill="WHITE">
+                           <font>
+                              <Font name="Berlin Sans FB Demi Bold" size="75.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <SplitPane layoutX="52.0" layoutY="782.0" orientation="VERTICAL" prefHeight="553.0" prefWidth="1273.0" style="-fx-background-color: white;" stylesheets="@../../../../absolutecinema/src/absolutecinema/application.css" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-1.0">
+                     <items>
+                        <HBox prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane prefHeight="600.0">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="540.0" prefWidth="4104.0" style="-fx-background-color: black;" stylesheets="@../../../../absolutecinema/src/absolutecinema/application.css">
+                                       <children>
+                                          <AnchorPane AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                          <BorderPane layoutX="48.0" layoutY="21.0" prefHeight="370.0" prefWidth="297.0" style="-fx-border-color: gold; -fx-background-color: gold; -fx-border-width: 20;">
+                                             <top>
+                                                <ImageView fx:id="image3" fitHeight="329.0" fitWidth="253.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+                                                   <viewport>
+                                                      <Rectangle2D />
+                                                   </viewport>
+                                                   <image>
+                                                      <Image url="@../../../../absolutecinema/src/image/3118ea691c77ed443781cca21ee1b0ec.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </top>
+                                          </BorderPane>
+                                          <BorderPane layoutX="418.0" layoutY="20.0" prefHeight="355.0" prefWidth="329.0" style="-fx-border-color: gold; -fx-background-color: gold; -fx-border-width: 20;">
+                                             <right>
+                                                <ImageView fx:id="image21" fitHeight="329.0" fitWidth="281.0" pickOnBounds="true" BorderPane.alignment="CENTER">
+                                                   <viewport>
+                                                      <Rectangle2D />
+                                                   </viewport>
+                                                   <image>
+                                                      <Image url="@../../../../absolutecinema/src/image/5f6603af1a69a033d0d520ba0e3ef9ed.jpg" />
+                                                   </image>
+                                                </ImageView>
+                                             </right>
+                                          </BorderPane>
+                                          <Label layoutX="77.0" layoutY="399.0" text="FRIEREN FANTASY XV" textFill="WHITE">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="21.0" />
+                                             </font>
+                                          </Label>
+                                          <Label contentDisplay="CENTER" layoutX="423.0" layoutY="392.0" prefHeight="35.0" prefWidth="342.0" text="Hatsune Miku: The Black Parade" textFill="WHITE">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="21.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="544.0" layoutY="429.0" text="51m and 37s" textFill="WHITE">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="150.0" layoutY="427.0" text="40hr and 30m" textFill="WHITE">
+                                             <font>
+                                                <Font name="Microsoft Sans Serif" size="15.0" />
+                                             </font>
+                                          </Label>
+                                       
+      
+                                                   </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </HBox>
+                     </items>
+                  </SplitPane>
+                  <SplitPane layoutX="-10.0" layoutY="1418.0" orientation="VERTICAL" prefHeight="118.0" prefWidth="1294.0" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="-10.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="1400.0">
+                    <items>
+                        <AnchorPane style="-fx-background-color: black;">
+                           <children>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="29.0" layoutY="4.0" prefHeight="116.0" prefWidth="1276.0" text="ABOUT US" textFill="WHITE" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="29.0" AnchorPane.rightAnchor="-29.0" AnchorPane.topAnchor="4.0">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi" size="33.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="-60.0" layoutY="32.0" prefHeight="74.0" prefWidth="442.0" text="Cinema Ticketing System - " textFill="WHITE" AnchorPane.leftAnchor="-60.0" AnchorPane.rightAnchor="910.0">
+                                 <font>
+                                    <Font name="Calibri Bold" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="250.0" layoutY="34.0" prefHeight="25.0" prefWidth="988.0" text="Crafted by a team of 7 passionate developers to simplify and enhance your movie booking experience with ease and convenience." textFill="WHITE" AnchorPane.leftAnchor="250.0" AnchorPane.rightAnchor="54.0">
+                                 <font>
+                                    <Font name="Eras Medium ITC" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="-521.0" layoutY="58.0" prefHeight="116.0" prefWidth="1292.0" text="FRONT END DEVS -" textFill="WHITE" AnchorPane.bottomAnchor="-58.0" AnchorPane.leftAnchor="-521.0" AnchorPane.rightAnchor="521.0" AnchorPane.topAnchor="58.0">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="-213.0" layoutY="59.0" prefHeight="119.0" prefWidth="1292.0" text="Lapid Jaycee, Laride Kurt, Revilla Angelo, Dormetorio Chauncey" textFill="WHITE" AnchorPane.bottomAnchor="-59.0" AnchorPane.leftAnchor="-213.0" AnchorPane.rightAnchor="213.0" AnchorPane.topAnchor="59.0">
+                                 <font>
+                                    <Font name="Calibri" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="381.0" layoutY="58.0" prefHeight="78.0" prefWidth="1292.0" text="BACK END DEVS -" textFill="WHITE" AnchorPane.bottomAnchor="-5.0" AnchorPane.leftAnchor="381.0" AnchorPane.rightAnchor="-116.0" AnchorPane.topAnchor="58.0">
+                                 <font>
+                                    <Font name="Franklin Gothic Demi Italic" size="20.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="949.0" layoutY="58.0" prefHeight="116.0" prefWidth="326.0" text="Reyes Franz, Ojeda Samuel, Jalop Arlan" textFill="WHITE" AnchorPane.bottomAnchor="-58.0" AnchorPane.leftAnchor="949.0" AnchorPane.rightAnchor="17.0" AnchorPane.topAnchor="58.0">
+                                 <font>
+                                    <Font name="Calibri" size="17.0" />
+                                 </font>
+                              </Label>
+                              <Label alignment="TOP_CENTER" contentDisplay="TOP" layoutX="40.0" layoutY="82.0" prefHeight="30.0" prefWidth="1292.0" text="&quot;We Make Lives Convenient&quot;" textFill="#ffffff52" AnchorPane.bottomAnchor="4.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="-40.0" AnchorPane.topAnchor="82.0">
+                                 <font>
+                                    <Font name="Franklin Gothic Heavy Italic" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+                  <ScrollPane fitToHeight="true" layoutX="11.0" layoutY="114.0" prefHeight="556.0" prefWidth="981.0" AnchorPane.bottomAnchor="848.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="286.0" AnchorPane.topAnchor="114.0">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="541.0" prefWidth="4096.0">
+                           <children>
+                              <SplitPane layoutX="-4.0" orientation="VERTICAL" prefHeight="559.0" prefWidth="4100.0" style="-fx-background-color: white;" AnchorPane.bottomAnchor="-18.0" AnchorPane.leftAnchor="-4.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <items>
+                                    <HBox fx:id="movieContainer" alignment="CENTER_LEFT" spacing="20" style="-fx-padding: 20; -fx-background-color: black;">
+                                       <children>
+                                          <AnchorPane prefHeight="535.0" prefWidth="1929.0" />
+                                       </children>
+                                    </HBox>
+                                 </items>
+                              </SplitPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </ScrollPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <SplitPane layoutY="-49.0" orientation="VERTICAL" prefWidth="1300.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-20.0" AnchorPane.topAnchor="-49.0">
+         <items>
+            <AnchorPane fx:id="header" minHeight="0.0" minWidth="0.0" prefHeight="121.0" prefWidth="1298.0" style="-fx-background-color: black;" stylesheets="@../../../../absolutecinema/src/absolutecinema/application.css">
+               <children>
+                  <Label fx:id="headlabel" layoutX="21.0" layoutY="58.0" prefHeight="59.0" prefWidth="490.0" text="CINEMA BOOKING" textFill="WHITE" AnchorPane.leftAnchor="21.0" AnchorPane.rightAnchor="787.0" AnchorPane.topAnchor="58.0">
+                     <font>
+                        <Font name="Courier New Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="400.0" layoutY="64.0" prefHeight="47.0" prefWidth="137.0" text="HOME" textFill="#cd9208">
+                     <font>
+                        <Font name="Courier New" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="exit" layoutX="1071.0" layoutY="64.0" onMouseClicked="#handleExitClick" prefHeight="47.0" prefWidth="137.0" text="QUIT" textFill="#cd9208">
+                     <font>
+                        <Font name="Courier New" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

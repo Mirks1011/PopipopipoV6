@@ -1,0 +1,45 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+#modPay {
+    -fx-font-size: 25px;
+    -fx-background-color: transparent;
+    -fx-text-fill: black;
+    -fx-font-weight:700;
+    -fx-border-color: white;
+    -fx-border-radius: 15px; 
+}
+
+#modPay .list-cell {
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+}
+
+
+#modPay .list-view {
+    -fx-background-color: black;
+}
+
+
+#modPay .arrow {
+    -fx-background-color: white;
+}
+
+#nameF {
+    -fx-text-fill: white;
+}
+
+#emailF {
+    -fx-text-fill: white;
+}
+.custom-alert {
+    -fx-background-color: yellow;
+    -fx-font-size: 16px;
+    -fx-font-family: "Arial";
+    -fx-text-fill: white;  
+}
+
+
+}

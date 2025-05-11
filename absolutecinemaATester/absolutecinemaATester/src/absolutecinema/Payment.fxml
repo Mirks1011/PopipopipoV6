@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="absolutecinema.PaymentController">
+    <stylesheets>
+        <URL value="@payment.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ComboBox fx:id="modPay" layoutX="482.0" layoutY="535.0" prefHeight="66.0" prefWidth="338.0" promptText="Mode of Payment" style="-fx-background-color: transparent; -fx-border-color: white; -fx-background-radius: 15px; -fx-border-radius: 5;" stylesheets="@payment.css" AnchorPane.bottomAnchor="197.0" AnchorPane.leftAnchor="482.0" AnchorPane.rightAnchor="458.0" />
+            <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="139.0" prefWidth="1280.0" text="Payment" textFill="WHITE" AnchorPane.bottomAnchor="645.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="-12.0" AnchorPane.topAnchor="14.0">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="96.0" />
+               </font>
+            </Label>
+            <TextField fx:id="nameF" layoutX="483.0" layoutY="363.0" prefHeight="66.0" prefWidth="338.0" promptText="Name" style="-fx-background-color: transparent; -fx-border-color: white; -fx-background-radius: 15; -fx-background-radius: 15px; -fx-border-radius: 5;" stylesheets="@payment.css" AnchorPane.bottomAnchor="369.0" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="457.0" />
+            <TextField fx:id="emailF" layoutX="482.0" layoutY="452.0" prefHeight="66.0" prefWidth="338.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: white; -fx-background-radius: 15; -fx-border-radius: 5;" stylesheets="@payment.css" AnchorPane.bottomAnchor="280.0" AnchorPane.leftAnchor="482.0" AnchorPane.rightAnchor="458.0" />
+            <Button fx:id="cancelBtn" layoutX="596.0" layoutY="699.0" mnemonicParsing="false" onAction="#handleCancel" prefHeight="41.0" prefWidth="124.0" style="-fx-background-color: red; -fx-border-radius: 15px; -fx-background-radius: 15;" text="Cancel" textFill="WHITE" AnchorPane.bottomAnchor="49.0" AnchorPane.leftAnchor="596.0" AnchorPane.rightAnchor="558.0">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+               </font>
+            </Button>
+            <Button fx:id="confirmBtn" layoutX="523.0" layoutY="620.0" mnemonicParsing="false" onAction="#handleConfirm" prefHeight="66.0" prefWidth="262.0" style="-fx-background-color: green; -fx-background-radius: 15px;" text="Confirm" textFill="WHITE" AnchorPane.bottomAnchor="112.0" AnchorPane.leftAnchor="523.0" AnchorPane.rightAnchor="493.0">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+               </font>
+            </Button>
+            <Label fx:id="movieTitleDisplay" layoutX="457.0" layoutY="161.0" prefHeight="48.0" prefWidth="317.0" text="Movie Title: " textFill="WHITE" AnchorPane.bottomAnchor="589.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="504.0" AnchorPane.topAnchor="161.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="17.0" />
+               </font></Label>
+            <Label fx:id="priceDisplay" layoutX="457.0" layoutY="302.0" prefHeight="50.0" prefWidth="134.0" text="Price: " textFill="WHITE" AnchorPane.bottomAnchor="448.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="689.0" AnchorPane.topAnchor="302.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font></Label>
+            <Label fx:id="seatNumDisplay" layoutX="457.0" layoutY="200.0" prefHeight="60.0" prefWidth="126.0" text="Seat Number: " textFill="WHITE" AnchorPane.bottomAnchor="540.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="697.0" AnchorPane.topAnchor="200.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font></Label>
+            <Label fx:id="dateDisplay" layoutX="776.0" layoutY="149.0" prefHeight="75.0" prefWidth="215.0" text="Date: " textFill="#f5f5f5" AnchorPane.bottomAnchor="576.0" AnchorPane.leftAnchor="776.0" AnchorPane.rightAnchor="289.0" AnchorPane.topAnchor="149.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font></Label>
+            <Label fx:id="cinemaNumDisplay" layoutX="457.0" layoutY="243.0" prefHeight="66.0" prefWidth="221.0" text="Cinema Number: " textFill="WHITE" AnchorPane.bottomAnchor="491.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="602.0" AnchorPane.topAnchor="243.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font></Label>
+            <Label fx:id="timeDisplay" layoutX="776.0" layoutY="213.0" prefHeight="60.0" prefWidth="126.0" text="Time:  " textFill="WHITE" AnchorPane.bottomAnchor="527.0" AnchorPane.leftAnchor="776.0" AnchorPane.rightAnchor="378.0" AnchorPane.topAnchor="213.0">
+               <font>
+                  <Font name="Berlin Sans FB" size="12.0" />
+               </font></Label>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

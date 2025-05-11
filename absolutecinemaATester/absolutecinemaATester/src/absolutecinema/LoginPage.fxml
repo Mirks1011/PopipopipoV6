@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="absolutecinema.LoginPageController">
+    <stylesheets>
+        <URL value="@loginpage.css" />
+    </stylesheets>
+   <children>
+      <HBox layoutX="540.0" layoutY="536.0" prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            <AnchorPane prefHeight="800.0" prefWidth="900.0">
+               <children>
+                  <Label layoutX="356.0" layoutY="11.0" text="Login" textFill="WHITE">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="75.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="187.0" layoutY="231.0" prefHeight="360.0" prefWidth="552.0" style="-fx-effect: blur(15); -fx-background-color: rgba(255, 255, 255, 0.1); -fx-border-radius: 15px; -fx-background-radius: 15px;" stylesheets="@loginpage.css">
+                     <children>
+                       <TextField fx:id="usernameField" layoutX="72.0" layoutY="84.0" prefHeight="61.0" prefWidth="421.0" promptText="Username">
+                            <font>
+                                <Font name="Berlin Sans FB" size="27.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </TextField>
+
+                        <PasswordField fx:id="passwordField" layoutX="72.0" layoutY="160.0" prefHeight="65.0" prefWidth="423.0" promptText="Password">
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </PasswordField>
+
+                        <Button id="loginBtn" layoutX="197.0" layoutY="256.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="150.0" 
+                                style="-fx-background-color: #90EE90;" text="Login" onAction="#handleLogin">
+                            <font>
+                                <Font name="Berlin Sans FB Demi Bold" size="26.0" />
+                            </font>
+                            <cursor>
+                                <Cursor fx:constant="HAND" />
+                            </cursor>
+                        </Button>
+
+                     </children>
+                  </AnchorPane>
+                  <Label layoutX="273.0" layoutY="92.0" prefHeight="36.0" prefWidth="376.0" text="Administration Mode" textFill="WHITE">
+                     <font>
+                        <Font name="Franklin Gothic Demi Cond" size="47.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
