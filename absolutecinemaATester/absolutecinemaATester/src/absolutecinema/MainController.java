@@ -8,7 +8,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
@@ -48,11 +50,13 @@ public class MainController {
     @FXML private Button addButton;
     @FXML private HBox movieContainer;
     @FXML private Button prodpay;
+    @FXML private HBox comingContainer1;
 
     @FXML
     public void initialize() {
         loadComboBoxData();
         loadMoviesFromDatabase();
+        loadComingSoonFromDatabase();
     }
 
     @FXML
@@ -391,5 +395,70 @@ priceLabel.setTextAlignment(TextAlignment.CENTER);
         return rawDuration; // Fallback
     }
 }
+    
+    /* COMING SOON PART*////
+      private void loadComingSoonFromDatabase() {
+    String sql = "SELECT com_id, movie_name, image_data FROM coming_soon";
 
+    try (Connection conn = DBConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql);
+         ResultSet rs = stmt.executeQuery()) {
+
+        comingContainer1.getChildren().clear();
+        comingContainer1.setAlignment(Pos.TOP_LEFT);
+
+        while (rs.next()) {
+            int comId = rs.getInt("com_id");
+            String titleText = rs.getString("movie_name");
+            byte[] imageBytes = rs.getBytes("image_data");
+
+            VBox card = createComingSoonCard(comId, titleText, imageBytes);
+            comingContainer1.getChildren().add(card);
+        }
+
+    } catch (SQLException e) {
+        showAlert("Database error: " + e.getMessage(), Alert.AlertType.ERROR);
+    }
 }
+
+
+   private VBox createComingSoonCard(int comId, String titleText, byte[] imageBytes) {
+    VBox card = new VBox(10);
+    card.setPrefWidth(300);
+    card.setStyle("-fx-background-color: black; -fx-padding: 10;");
+    card.setAlignment(Pos.TOP_LEFT);
+
+    BorderPane frame = new BorderPane();
+    frame.setStyle("-fx-border-color: gold; -fx-border-width: 10; -fx-background-color: gold;");
+    frame.setPrefSize(276, 338);
+    frame.setMaxSize(Region.USE_PREF_SIZE, Region.USE_PREF_SIZE);
+
+    ImageView imageView = new ImageView();
+    imageView.setFitWidth(242);
+    imageView.setFitHeight(313);
+    imageView.setPreserveRatio(true);
+    imageView.setImage(imageBytes != null 
+        ? new Image(new ByteArrayInputStream(imageBytes)) 
+        : new Image("placeholder.png"));
+
+    frame.setCenter(imageView);
+
+    Label titleLabel = createLabel(titleText, 21);
+    card.getChildren().addAll(frame, titleLabel);
+
+    return card;
+}
+
+
+// Add this helper method inside the same class (outside other methods)
+private Label createLabel(String text, int fontSize) {
+    Label label = new Label(text);
+    label.setFont(Font.font("System", FontWeight.BOLD, fontSize));
+    label.setTextFill(Color.WHITE); // Optional: to ensure text is visible on black background
+    return label;
+}
+
+    
+}
+
+

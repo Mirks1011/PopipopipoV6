@@ -5,11 +5,8 @@
         <group>
             <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/MainController.java</file>
             <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/AdminMainController.java</file>
-            <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/ActualBookingController.java</file>
-            <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/DBConnection.java</file>
-            <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/AdminEditMovieController.java</file>
-            <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/application.css</file>
-            <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/SeatNumbController.java</file>
+            <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/AdminEditComing.fxml</file>
+            <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/AdminEditComingController.java</file>
             <file>file:/C:/Users/Kurt/Videos/absolutecinemaATester/absolutecinemaATester/src/absolutecinema/AdminActualBookingController.java</file>
         </group>
     </open-files>

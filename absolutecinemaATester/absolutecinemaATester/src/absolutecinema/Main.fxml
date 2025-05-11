@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
@@ -67,53 +63,14 @@
                            <children>
                               <ScrollPane prefHeight="600.0">
                                  <content>
-                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="540.0" prefWidth="4104.0" style="-fx-background-color: black;" stylesheets="@../../../../absolutecinema/src/absolutecinema/application.css">
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="4047.0" style="-fx-background-color: black;" stylesheets="@../../../../absolutecinema/src/absolutecinema/application.css">
                                        <children>
                                           <AnchorPane AnchorPane.bottomAnchor="63.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                          <BorderPane layoutX="48.0" layoutY="21.0" prefHeight="370.0" prefWidth="297.0" style="-fx-border-color: gold; -fx-background-color: gold; -fx-border-width: 20;">
-                                             <top>
-                                                <ImageView fx:id="image3" fitHeight="329.0" fitWidth="253.0" pickOnBounds="true" BorderPane.alignment="CENTER">
-                                                   <viewport>
-                                                      <Rectangle2D />
-                                                   </viewport>
-                                                   <image>
-                                                      <Image url="@../../../../absolutecinema/src/image/3118ea691c77ed443781cca21ee1b0ec.jpg" />
-                                                   </image>
-                                                </ImageView>
-                                             </top>
-                                          </BorderPane>
-                                          <BorderPane layoutX="418.0" layoutY="20.0" prefHeight="355.0" prefWidth="329.0" style="-fx-border-color: gold; -fx-background-color: gold; -fx-border-width: 20;">
-                                             <right>
-                                                <ImageView fx:id="image21" fitHeight="329.0" fitWidth="281.0" pickOnBounds="true" BorderPane.alignment="CENTER">
-                                                   <viewport>
-                                                      <Rectangle2D />
-                                                   </viewport>
-                                                   <image>
-                                                      <Image url="@../../../../absolutecinema/src/image/5f6603af1a69a033d0d520ba0e3ef9ed.jpg" />
-                                                   </image>
-                                                </ImageView>
-                                             </right>
-                                          </BorderPane>
-                                          <Label layoutX="77.0" layoutY="399.0" text="FRIEREN FANTASY XV" textFill="WHITE">
-                                             <font>
-                                                <Font name="Microsoft Sans Serif" size="21.0" />
-                                             </font>
-                                          </Label>
-                                          <Label contentDisplay="CENTER" layoutX="423.0" layoutY="392.0" prefHeight="35.0" prefWidth="342.0" text="Hatsune Miku: The Black Parade" textFill="WHITE">
-                                             <font>
-                                                <Font name="Microsoft Sans Serif" size="21.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="544.0" layoutY="429.0" text="51m and 37s" textFill="WHITE">
-                                             <font>
-                                                <Font name="Microsoft Sans Serif" size="15.0" />
-                                             </font>
-                                          </Label>
-                                          <Label layoutX="150.0" layoutY="427.0" text="40hr and 30m" textFill="WHITE">
-                                             <font>
-                                                <Font name="Microsoft Sans Serif" size="15.0" />
-                                             </font>
-                                          </Label>
+                                          <HBox fx:id="comingContainer1" alignment="CENTER_LEFT" prefHeight="540.0" prefWidth="4104.0" spacing="20" style="-fx-padding: 20; -fx-background-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <AnchorPane prefHeight="535.0" prefWidth="1929.0" />
+                                             </children>
+                                          </HBox>
                                        
       
                                                    </children>

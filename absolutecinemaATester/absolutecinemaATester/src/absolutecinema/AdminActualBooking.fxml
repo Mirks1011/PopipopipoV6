@@ -8,6 +8,7 @@
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -43,7 +44,10 @@
                               </AnchorPane>
                               <AnchorPane layoutX="176.0" layoutY="29.0" prefHeight="434.0" prefWidth="298.0" style="-fx-border-radius: 50px; -fx-background-radius: 15px;">
                                  <children>
-                                    <ImageView fx:id="movPost" fitHeight="392.0" fitWidth="353.0" layoutX="-153.0" pickOnBounds="true" AnchorPane.leftAnchor="-153.0" AnchorPane.rightAnchor="98.0" AnchorPane.topAnchor="0.0" />
+                                    <ImageView fx:id="movPost" fitHeight="392.0" fitWidth="353.0" layoutX="-153.0" pickOnBounds="true" AnchorPane.leftAnchor="-153.0" AnchorPane.rightAnchor="98.0" AnchorPane.topAnchor="0.0">
+                                       <image>
+                                          <Image url="@../../../../../OneDrive/Pictures/Saved%20Pictures/7ab302bfcf3c6bcc8ac09b04be93b2e9.jpg" />
+                                       </image></ImageView>
                                     <Button fx:id="prodpay1" layoutX="-82.0" layoutY="397.0" mnemonicParsing="false" onAction="#addImage" prefHeight="47.0" prefWidth="243.0" style="-fx-background-color: #b88821;" stylesheets="@application.css" text="ADD IMAGE" textFill="WHITE">
                                        <font>
                                           <Font name="Courier New" size="17.0" />

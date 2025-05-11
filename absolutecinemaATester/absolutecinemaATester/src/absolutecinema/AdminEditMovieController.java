@@ -18,8 +18,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -33,14 +33,11 @@ public class AdminEditMovieController implements Initializable {
     @FXML private TextArea synopsisField;
     @FXML private TextField lengthField;
     @FXML private TextField priceField;
-    @FXML private ComboBox<String> cinema;
-@FXML private ComboBox<String> date;
-@FXML private ComboBox<String> time;
-
-
-    
     @FXML private ImageView movPost;
     @FXML private Button updateMovieBtn;
+    @FXML private ComboBox<String> date;
+    @FXML private ComboBox<String> time;
+    @FXML private ComboBox<String> cinema;
 
     private String imagePath;
     private int movieId; // Store the movie ID
@@ -134,29 +131,20 @@ public class AdminEditMovieController implements Initializable {
     }
 
     /** Update movie details in the database */
- @FXML
+   @FXML
 public void handleUpdateMovie(ActionEvent event) {
     String title = titleField.getText();
     String synopsis = synopsisField.getText();
     String length = lengthField.getText();
     String priceText = priceField.getText();
-
-    String selectedCinema = cinema.getValue();
     String selectedDate = date.getValue();
     String selectedTime = time.getValue();
+    String selectedCinema = cinema.getValue();
 
-    // Debug check to ensure fields are populated
-    System.out.println("Updating movie ID: " + movieId);
-    System.out.println("Synopsis: " + synopsis);
-    System.out.println("Length: " + length);
-    System.out.println("Price: " + priceText);
-    System.out.println("Cinema: " + selectedCinema);
-    System.out.println("Date: " + selectedDate);
-    System.out.println("Time: " + selectedTime);
-
+    // Validate fields
     if (title.isEmpty() || synopsis.isEmpty() || length.isEmpty() || priceText.isEmpty()
-            || selectedCinema == null || selectedDate == null || selectedTime == null) {
-        showAlert("Please fill in all movie details, including cinema, date, and time.", Alert.AlertType.ERROR);
+            || selectedDate == null || selectedTime == null || selectedCinema == null) {
+        showAlert("Please fill in all movie details, including title, date, time, and cinema.", Alert.AlertType.ERROR);
         return;
     }
 
@@ -167,7 +155,7 @@ public void handleUpdateMovie(ActionEvent event) {
         if (imageFile != null) {
             imageBytes = Files.readAllBytes(imageFile.toPath());
         } else {
-            System.out.println("No new image selected, using existing database image.");
+            // Load existing image from DB if none selected
             try (Connection conn = DBConnection.getConnection();
                  PreparedStatement stmt = conn.prepareStatement("SELECT image_data FROM movies WHERE movie_id = ?")) {
                 stmt.setInt(1, movieId);
@@ -184,7 +172,7 @@ public void handleUpdateMovie(ActionEvent event) {
     }
 
     try (Connection conn = DBConnection.getConnection()) {
-        String sql = "UPDATE movies SET movie_name=?, synopsis=?, length=?, price=?, image_data=?, cinema_number=?, date=?, time=? WHERE movie_id=?";
+        String sql = "UPDATE movies SET movie_name=?, synopsis=?, length=?, price=?, image_data=?, date=?, time=?, cinema_number=? WHERE movie_id=?";
         PreparedStatement stmt = conn.prepareStatement(sql);
 
         stmt.setString(1, title);
@@ -192,10 +180,10 @@ public void handleUpdateMovie(ActionEvent event) {
         stmt.setString(3, length);
         stmt.setString(4, priceText);
         stmt.setBytes(5, imageBytes);
-        stmt.setString(6, selectedCinema);
-        stmt.setString(7, selectedDate);
-        stmt.setString(8, selectedTime);
-        stmt.setInt(9, movieId); // Now the 9th parameter
+        stmt.setString(6, selectedDate);
+        stmt.setString(7, selectedTime);
+        stmt.setString(8, selectedCinema);
+        stmt.setInt(9, movieId);
 
         System.out.println("Executing Update SQL: " + stmt);
 
@@ -203,24 +191,21 @@ public void handleUpdateMovie(ActionEvent event) {
         System.out.println("Rows affected: " + rowsUpdated);
 
         if (rowsUpdated > 0) {
-            System.out.println("Movie updated successfully!");
             showAlert("Movie updated successfully!", Alert.AlertType.INFORMATION);
 
+            // Redirect back to AdminMain
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/absolutecinema/AdminMain.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
         } else {
-            System.err.println("Update failed! No rows affected.");
             showAlert("Update failed! No changes were made.", Alert.AlertType.WARNING);
         }
     } catch (SQLException | IOException e) {
-        System.err.println("Database update error: " + e.getMessage());
         showAlert("Database error: " + e.getMessage(), Alert.AlertType.ERROR);
     }
 }
-
 
 
     /** Allow users to change the movie poster image */
@@ -249,20 +234,22 @@ public void handleUpdateMovie(ActionEvent event) {
         });
     }
     
-    @FXML
+   @FXML
 public void handleDeleteMovie(ActionEvent event) {
-    // Confirmation Dialog
     Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
     confirmAlert.setTitle("Delete Movie");
     confirmAlert.setHeaderText(null);
     confirmAlert.setContentText("Are you sure you want to delete this movie?");
-    
+
     if (confirmAlert.showAndWait().get() == javafx.scene.control.ButtonType.OK) {
         try (Connection conn = DBConnection.getConnection()) {
-            String sql = "DELETE FROM movies WHERE movie_id = ?";
+            String sql = "DELETE FROM movies WHERE movie_id = ? AND date = ? AND time = ? AND cinema_number = ?";
             PreparedStatement stmt = conn.prepareStatement(sql);
 
             stmt.setInt(1, movieId);
+            stmt.setString(2, date.getValue());
+            stmt.setString(3, time.getValue());
+            stmt.setString(4, cinema.getValue());
 
             System.out.println("Executing Delete SQL: " + stmt);
             int rowsDeleted = stmt.executeUpdate();
@@ -271,7 +258,7 @@ public void handleDeleteMovie(ActionEvent event) {
             if (rowsDeleted > 0) {
                 showAlert("Movie deleted successfully!", Alert.AlertType.INFORMATION);
 
-                // Redirect to the main screen after deletion
+                // Redirect after deletion
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("/absolutecinema/AdminMain.fxml"));
                 Parent root = loader.load();
                 Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
@@ -288,5 +275,7 @@ public void handleDeleteMovie(ActionEvent event) {
 }
 
 }
+
+
 
 
